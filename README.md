@@ -47,10 +47,10 @@ Os **Repositórios** são responsáveis por **persistir e recuperar** agregados.
 💡 **Exemplo de Interface de Repositório para o Contexto de Consultas:**  
 
 ```csharp
-public interface IConsultaRepository
+public interface IAluguelRepository
 {
-    Consulta ObterPorId(Guid id);
-    void Salvar(Consulta consulta);
+    Aluguel ObterPorId(Guid id);
+    void Salvar(Aluguel aluguel);
 }
 ```
 
