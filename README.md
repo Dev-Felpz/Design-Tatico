@@ -15,10 +15,10 @@ Criar as **Entidades, Value Objects, Agregados e Repositórios** do seu projeto,
 
 | **Elemento**      | **Entidade ou Value Object?** | **Justificativa** |
 |------------------|-----------------------------|-------------------|
-| **Paciente**     | Entidade                     | Tem um ID único e pode mudar seus dados ao longo do tempo. |
-| **Médico**       | Entidade                     | Possui identidade única e pode atualizar sua especialidade. |
-| **Endereço**     | Value Object                 | Se um paciente muda de endereço, não faz sentido modificar o antigo, apenas substituí-lo. |
-| **CPF**          | Value Object                 | Sempre pertence a apenas um paciente e não muda. |
+| **Locatário**     | Entidade                     | Tem um ID único e pode mudar seus dados ao longo do tempo. |
+| **Locador**       | Entidade                     | Possui identidade única. |
+| **Endereço**     | Value Object                 | Se um locador ou locatário muda de endereço, não faz sentido modificar o antigo, apenas substituí-lo. |
+| **CPF**          | Value Object                 | Sempre pertence a apenas um usuário (locatário e locador) e não muda. |
 
 ---
 
@@ -74,11 +74,11 @@ Criar as **Entidades, Value Objects, Agregados e Repositórios** do seu projeto.
 
 | **Elemento**            | **Tipo**         | **Explicação** |
 |-------------------------|-----------------|---------------|
-| Paciente               | Entidade        | Possui identidade única e pode mudar ao longo do tempo. |
-| Médico                 | Entidade        | Tem uma identidade única e pode alterar seus horários. |
-| CPF                    | Value Object    | Não muda e sempre pertence a um único paciente. |
-| Endereço               | Value Object    | Se o paciente mudar de endereço, um novo objeto será criado. |
-| Consulta (Agregado)    | Aggregate Root  | Controla a relação entre Paciente, Médico e Data da Consulta. |
+| Locatário               | Entidade        | Possui identidade única e pode mudar ao longo do tempo. |
+| Locador                 | Entidade        | Tem uma identidade única. |
+| CPF                    | Value Object    | Não muda e sempre pertence a um único usuário. |
+| Endereço               | Value Object    | Se o locatário ou locador mudar de endereço, um novo objeto será criado. |
+| Aluguel (Agregado)    | Aggregate Root  | Controla a relação entre Locatário, Locador e Data do Aluguel. |
 
 
 📌 **Ferramentas para Criar o Diagrama:**  
